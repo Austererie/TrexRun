@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvl6lvpoxuicq"]
+
+[ext_resource type="PackedScene" uid="uid://cohtu47rrs6nm" path="res://scenes/background.tscn" id="1_lqxbm"]
+[ext_resource type="PackedScene" uid="uid://bkxone8b4eucs" path="res://scenes/ground.tscn" id="2_86lfu"]
+[ext_resource type="PackedScene" uid="uid://b4ua77ttgtlfw" path="res://scenes/trex.tscn" id="3_tvjsh"]
+
+[node name="main" type="Node"]
+
+[node name="Background" parent="." instance=ExtResource("1_lqxbm")]
+
+[node name="ground" parent="." instance=ExtResource("2_86lfu")]
+
+[node name="trex" parent="." instance=ExtResource("3_tvjsh")]
+position = Vector2(72, 528)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)

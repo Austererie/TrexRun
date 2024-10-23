@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://b4ua77ttgtlfw"]
+[gd_scene load_steps=27 format=3 uid="uid://b4ua77ttgtlfw"]
 
 [ext_resource type="Texture2D" uid="uid://b5d7f3u1wd6ya" path="res://assets/DinoSprites - mort.png" id="1_jblst"]
+[ext_resource type="Script" path="res://scripts/trex.gd" id="1_sqigk"]
 [ext_resource type="AudioStream" uid="uid://dqgdcukw85r0" path="res://sounds/458641__matrixxx__retro-jump-02.wav" id="2_uydd2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t42ia"]
@@ -174,6 +175,7 @@ size = Vector2(11, 14.375)
 
 [node name="trex" type="CharacterBody2D"]
 scale = Vector2(8, 8)
+script = ExtResource("1_sqigk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -189,6 +191,6 @@ shape = SubResource("RectangleShape2D_xlejt")
 position = Vector2(-0.25, 0.9375)
 shape = SubResource("RectangleShape2D_ug1b7")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="jumpSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_uydd2")
 volume_db = -25.0
