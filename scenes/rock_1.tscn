@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0bqh8h54pao4"]
+
+[ext_resource type="Texture2D" uid="uid://dv0546ucqdxhu" path="res://assets/Rock Pile 1 - AZURE - BIG.PNG" id="1_7j1dv"]
+
+[node name="Rock1" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_7j1dv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-37, -69, 11, -65, 26, -50, 61, -56, 91, -34, 88, -16, 107, -7, 122, 20, 95, 41, 67, 36, 32, 55, 18, 70, -27, 60, -60, 54, -82, 40, -124, 30, -111, 0, -99, -1, -105, -38, -72, -58, -56, -58)
