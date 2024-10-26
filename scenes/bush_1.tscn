@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://cy6y7csvfmoba"]
 
-[ext_resource type="Texture2D" uid="uid://bdbmyuncjnj1h" path="res://assets/Bush 1_GREEN.png" id="1_su7fa"]
+[ext_resource type="Texture2D" uid="uid://5cdnkbjm3q20" path="res://assets/Bush 1_RED.png" id="1_ydsq4"]
 
 [node name="bush1" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
-texture = ExtResource("1_su7fa")
+texture = ExtResource("1_ydsq4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-83, -58, -58, -16, -57, -59, -41, -23, -22, -48, -5, -64, 12, -23, 21, -53, 37, -32, 45, -53, 63, -49, 72, -62, 75, -37, 92, -53, 80, -17, 112, -19, 96, -3, 132, 2, 98, 19, 113, 37, 59, 46, 62, 64, 0, 39, -19, 65, -45, 39, -96, 54, -90, 27, -124, 48, -111, 21, -134, 14, -109, 11, -130, -5, -104, -3, -101, -48, -79, -8)
