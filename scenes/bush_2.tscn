@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbxiil76slv2k"]
+
+[ext_resource type="Texture2D" uid="uid://cjdk4if7a103" path="res://assets/Bush 13_YELLOW.png" id="1_euxn0"]
+
+[node name="bush2" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_euxn0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-52, -30, -50, -22, -83, -10, -101, -5, -118, 5, -114, 22, -96, 19, -96, 24, -80, 23, -61, 26, -54, 18, -35, 28, -11, 27, -3, 34, 9, 15, 23, 27, 39, 19, 62, 25, 115, 25, 111, 9, 101, 4, 112, -2, 98, -15, 98, -29, 83, -30, 79, -14, 71, -31, 60, -12, 49, -20, 46, -36, 33, -29, 18, -22, 0, -20, 0, -31, -11, -27, -16, -20, -30, -19)

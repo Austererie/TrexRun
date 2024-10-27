@@ -48,8 +48,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_rkgf1")
 }],
 "loop": true,
-"name": &"idle",
-"speed": 19.0
+"name": &"run",
+"speed": 18.0
 }]
 
 [node name="rino" type="CharacterBody2D"]
@@ -58,7 +58,9 @@ animations = [{
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_j6hqj")
-animation = &"idle"
+animation = &"run"
+frame = 3
+frame_progress = 0.509676
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-58, -51, 0, -52, 5, -44, 46, -46, 77, -30, 81, -9, 96, 13, 96, 28, 82, 29, 68, 62, 43, 60, 31, 50, 18, 62, -24, 61, -27, 47, -73, 46, -104, 19, -71, 14, -78, -7, -65, -11, -77, -31)
