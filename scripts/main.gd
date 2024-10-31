@@ -18,6 +18,7 @@ var speed : float
 const START_SPEED : float = 10.0
 const MAX_SPEED : int = 25
 const SPEED_MODIFIER : int = 5000
+var high_Score: int
 var screen_size : Vector2i
 var ground_height: int
 var game_running: bool
@@ -30,13 +31,21 @@ const MAX_DIFFICULTY: int = 2
 func _ready() -> void:
 	screen_size = get_window().size
 	ground_height = $ground.get_node("Sprite2D").texture.get_height()
-
+	$gameOver.get_node("restartButton").pressed.connect(new_game)
+	new_game()
+	
 func new_game():
 	#reset vars
 	score = 0
 	show_score()
 	game_running = false
+	get_tree().paused = false
 	difficulty = 0
+	
+	#clear obstacles
+	for obs in obstacles:
+		obs.queue_free()
+	obstacles.clear()
 	
 	
 	#reset nodes
@@ -46,6 +55,8 @@ func new_game():
 	$ground.position = Vector2i(0, 0)
 	
 	$scoreCanvas.get_node("pressPlay").show()
+	$gameOver.hide()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -109,11 +120,31 @@ func generate_obstacles():
 		
 func add_obstacles(obs, x, y):
 	obs.position = Vector2i(x, y)
+	obs.body_entered.connect(hit_obs)
 	add_child(obs)
 	obstacles.append(obs)
+
+func hit_obs(body):
+	if body.name == "trex":
+		game_over()
+		
+func game_over():
+	get_tree().paused = true
+	game_running = false
+	$gameOver.show()
+	set_high_score()
+		
+		
+	
+	
 	
 func show_score():
 	$scoreCanvas.get_node("score").text = "Score: " + str(score / SCORE_MODIFIER)
+	
+func set_high_score():
+	if score > high_Score:
+		high_Score = score
+		$scoreCanvas.get_node("highScore").text = "High Score: " + str(high_Score / SCORE_MODIFIER)
 	
 func adjust_difficulty():
 	difficulty = score / SPEED_MODIFIER

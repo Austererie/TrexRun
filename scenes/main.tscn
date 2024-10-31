@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvl6lvpoxuicq"]
+[gd_scene load_steps=7 format=3 uid="uid://bvl6lvpoxuicq"]
 
 [ext_resource type="PackedScene" uid="uid://cohtu47rrs6nm" path="res://scenes/background.tscn" id="1_lqxbm"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_qfsr7"]
 [ext_resource type="PackedScene" uid="uid://bkxone8b4eucs" path="res://scenes/ground.tscn" id="2_86lfu"]
 [ext_resource type="PackedScene" uid="uid://b4ua77ttgtlfw" path="res://scenes/trex.tscn" id="3_tvjsh"]
 [ext_resource type="PackedScene" uid="uid://kfsju3gfsxa4" path="res://scenes/score_canvas.tscn" id="5_l1let"]
+[ext_resource type="PackedScene" uid="uid://bqyua52rqinwa" path="res://scenes/game_over.tscn" id="6_m44f7"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_qfsr7")
@@ -21,3 +22,6 @@ position = Vector2(576, 324)
 position_smoothing_enabled = true
 
 [node name="scoreCanvas" parent="." instance=ExtResource("5_l1let")]
+
+[node name="gameOver" parent="." instance=ExtResource("6_m44f7")]
+process_mode = 2
